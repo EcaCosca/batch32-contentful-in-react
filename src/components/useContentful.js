@@ -11,7 +11,8 @@ const useContentful = () => {
     const getRecipes = async () => {
         try {
             const entries = await client.getEntries({
-                content_type: "recipe"
+                content_type: "recipe",
+                select: "fields"
             });
             return entries;
         } catch (error) {
